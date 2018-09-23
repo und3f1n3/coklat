@@ -30,7 +30,7 @@ print('''
 ''')
 user = raw_input('[?] Target Username/ID/Email/PHONE >>> ')
 time.sleep(2)
-print '\n +user+ ditemukan...'
+print '\nmembaca data '+user+'...'
 time.sleep(1)
 print '\n'
 wrdlstFileName = raw_input('\n[?] Wordlist.txt >>> ')
