@@ -29,7 +29,9 @@ print('''
 
 ''')
 user = raw_input('[?] Target Username/ID/Email/PHONE >>> ')
-time.sleep(0.8)
+time.sleep(2)
+print '\n +user+ ditemukan...'
+time.sleep(1)
 wrdlstFileName = raw_input('\n[?] Wordlist.txt >>> ')
 try:
     wordlist = open(wrdlstFileName, 'r')
