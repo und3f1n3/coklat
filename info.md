@@ -4,12 +4,12 @@ hack facebook with bruteforce without passwordfile . because worldlist was there
 download terlebih dahulu termux jika kamu belum punya
 masukan semua perintah ini satu persatu $ di termux
 
-     $ pkg install python2
+       $ pkg install python2
  
  
-!!!!!INFO!!!!!
-jika kamu melihat kata " do you want to continue? (Y/n) "
-jawab y kemudian enter
+# !!!!!INFO!!!!!
+# jika kamu melihat kata " do you want to continue? (Y/n) "
+# jawab y kemudian enter
 
    
    
