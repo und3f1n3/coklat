@@ -42,3 +42,7 @@ bisa mendapatkan passwordnya dengan cara ini,.. jika kamu mau racik sendiri word
 silahkan ketik perintah di termux
 
        $ nano wordlist.txt
+       
+ contoh
+ 
+ <img src="https://github.com/und3f1n3/facebooklkbot/blob/master/0.jpg?">
