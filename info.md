@@ -26,7 +26,7 @@ ___________
 ___________
        $ cd coklat
 ___________
-       $ python2 tools.py
+       $ python2 coklat.py
 __________________
 
 dibagian username/ID/phone silahkan masukkan ID targetmu,
